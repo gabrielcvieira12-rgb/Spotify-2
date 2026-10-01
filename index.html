@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SoundFlow</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+    <!-- =====================================================
+         LOGIN
+    ====================================================== -->
+
+    <section id="login-screen">
+
+        <div class="login-container">
+
+            <div class="login-logo">
+                <span>♫</span>
+                <h1>SoundFlow</h1>
+            </div>
+
+            <h2>Entrar no SoundFlow</h2>
+
+            <input id="email" type="email" placeholder="Email">
+
+            <input id="password" type="password" placeholder="Senha">
+
+            <button id="login-btn">
+                Entrar
+            </button>
+
+            <button id="register-btn" class="secondary-btn">
+                Criar conta
+            </button>
+
+            <p id="auth-message"></p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         APLICAÇÃO
+    ====================================================== -->
+
+    <div id="app" style="display: none;">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+
+            <!-- LOGO -->
+
+            <div class="logo">
+
+                <span class="logo-icon">
+                    ♫
+                </span>
+
+                <span>
+                    SoundFlow
+                </span>
+
+            </div>
+
+
+
+            <!-- MENU PRINCIPAL -->
+
+            <nav class="main-menu">
+
+                <button class="nav-item active" data-section="home">
+                    <span>⌂</span>
+                    Início
+                </button>
+
+
+                <button class="nav-item" data-section="search">
+                    <span>⌕</span>
+                    Buscar
+                </button>
+
+
+                <button class="nav-item" data-section="library">
+                    <span>▣</span>
+                    Sua biblioteca
+                </button>
+
+            </nav>
+
+
+
+            <!-- ADMIN -->
+
+            <div id="admin-nav" class="admin-menu" style="display: none;">
+
+                <p class="menu-title">
+                    ADMINISTRAÇÃO
+                </p>
+
+                <button class="nav-item" data-section="admin">
+
+                    <span>⚙</span>
+
+                    Painel Admin
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ESPAÇO -->
+
+            <div class="sidebar-space"></div>
+
+
+
+            <!-- USUÁRIO -->
+
+            <div class="sidebar-bottom">
+
+                <button id="logout-btn" class="logout-btn">
+
+                    <span>↪</span>
+
+                    Sair
+
+                </button>
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =================================================
+             CONTEÚDO PRINCIPAL
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =============================================
+                 HEADER
+            ============================================== -->
+
+            <header class="topbar">
+
+
+                <div class="navigation-buttons">
+
+                    <button class="circle-btn">
+                        ‹
+                    </button>
+
+                    <button class="circle-btn">
+                        ›
+                    </button>
+
+                </div>
+
+
+
+                <!-- PESQUISA -->
+
+                <div class="search-box">
+
+                    <span>
+                        🔍
+                    </span>
+
+                    <input id="search-input" type="text" placeholder="O que você quer ouvir?">
+
+                </div>
+
+
+
+                <div class="top-user">
+
+                    <div class="user-avatar">
+                        U
+                    </div>
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =============================================
+                 HOME
+            ============================================== -->
+
+            <section id="home-section" class="page-section">
+
+                <div class="hero">
+
+                    <div>
+
+                        <p class="small-title">
+                            BEM-VINDO AO SOUNDFLOW
+                        </p>
+
+                        <h1>
+                            Sua música.<br>
+                            Do seu jeito.
+                        </h1>
+
+                        <p>
+                            Escute suas músicas favoritas
+                            em qualquer lugar.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MÚSICAS -->
+
+                <section class="music-section">
+
+                    <div class="section-header">
+
+                        <h2>
+                            Músicas disponíveis
+                        </h2>
+
+                        <button>
+                            Mostrar tudo
+                        </button>
+
+                    </div>
+
+
+                    <div id="music-list" class="music-grid">
+
+                        <!--
+                            As músicas serão adicionadas
+                            automaticamente pelo JavaScript.
+                        -->
+
+                    </div>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 BUSCA
+            ============================================== -->
+
+            <section id="search-section" class="page-section" style="display: none;">
+
+                <div class="page-title">
+
+                    <h1>
+                        Buscar
+                    </h1>
+
+                    <p>
+                        Encontre suas músicas favoritas.
+                    </p>
+
+                </div>
+
+
+                <div id="search-list" class="search-results">
+
+                    <!-- Resultados aparecem aqui -->
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 BIBLIOTECA
+            ============================================== -->
+
+            <section id="library-section" class="page-section" style="display: none;">
+
+                <div class="page-title">
+
+                    <h1>
+                        Sua biblioteca
+                    </h1>
+
+                    <p>
+                        Suas músicas e playlists.
+                    </p>
+
+                </div>
+
+
+                <div class="library-empty">
+
+                    <div class="empty-icon">
+                        ♫
+                    </div>
+
+                    <h2>
+                        Sua biblioteca está vazia
+                    </h2>
+
+                    <p>
+                        Adicione músicas para começar.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 ADMIN
+            ============================================== -->
+
+            <section id="admin-section" class="page-section" style="display: none;">
+
+                <div class="page-title">
+
+                    <p class="small-title">
+                        ADMINISTRAÇÃO
+                    </p>
+
+                    <h1>
+                        Painel do administrador
+                    </h1>
+
+                    <p>
+                        Adicione e gerencie as músicas
+                        do SoundFlow.
+                    </p>
+
+                </div>
+
+
+
+                <!-- FORMULÁRIO -->
+
+                <div class="admin-card">
+
+                    <h2>
+                        Adicionar música
+                    </h2>
+
+
+                    <div class="form-grid">
+
+
+                        <div class="form-group">
+
+                            <label for="music-title">
+                                Título
+                            </label>
+
+                            <input id="music-title" type="text" placeholder="Nome da música">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="music-artist">
+                                Artista
+                            </label>
+
+                            <input id="music-artist" type="text" placeholder="Nome do artista">
+
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <label for="music-album">
+                                Álbum
+                            </label>
+
+                            <input id="music-album" type="text" placeholder="Nome do álbum">
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- CAPA -->
+
+                    <div class="file-group">
+
+                        <label for="music-cover">
+
+                            🖼️ Capa da música
+
+                        </label>
+
+                        <input id="music-cover" type="file" accept="image/*">
+
+                    </div>
+
+
+
+                    <!-- MP3 -->
+
+                    <div class="file-group">
+
+                        <label for="music-audio">
+
+                            🎵 Arquivo MP3
+
+                        </label>
+
+                        <input id="music-audio" type="file" accept="audio/*">
+
+                    </div>
+
+
+
+                    <button id="add-music-btn" class="add-music-btn">
+
+                        + Adicionar música
+
+                    </button>
+
+
+                    <p id="admin-message"></p>
+
+                </div>
+
+
+
+                <!-- MÚSICAS CADASTRADAS -->
+
+                <div class="admin-music-area">
+
+                    <h2>
+                        Músicas cadastradas
+                    </h2>
+
+                    <div id="admin-music-list" class="admin-music-list">
+
+                        <!--
+                            Lista criada pelo JavaScript.
+                        -->
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =================================================
+             PLAYER
+        ================================================== -->
+
+        <footer class="player">
+
+
+            <!-- INFORMAÇÕES -->
+
+            <div class="player-info">
+
+                <div class="player-cover">
+
+                    🎵
+
+                </div>
+
+                <div>
+
+                    <h4 id="player-title">
+                        Nenhuma música
+                    </h4>
+
+                    <p id="player-artist">
+                        Escolha uma música
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONTROLES -->
+
+            <div class="player-center">
+
+
+                <div class="player-buttons">
+
+                    <button>
+                        ⇄
+                    </button>
+
+                    <button>
+                        ⏮
+                    </button>
+
+                    <button class="play-button">
+                        ▶
+                    </button>
+
+                    <button>
+                        ⏭
+                    </button>
+
+                    <button>
+                        ↻
+                    </button>
+
+                </div>
+
+
+                <audio id="audio" controls>
+
+                </audio>
+
+            </div>
+
+
+
+            <!-- VOLUME -->
+
+            <div class="player-volume">
+
+                <span>
+                    🔊
+                </span>
+
+                <input type="range" min="0" max="100" value="80">
+
+            </div>
+
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script type="module" src="./js/app.js"></script>
+
+</body>
+
+</html>

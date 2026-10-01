@@ -1,0 +1,1114 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+#login-screen {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #121212,
+        #000
+    );
+}
+
+.login-container {
+    width: 400px;
+    padding: 40px;
+
+    background: #181818;
+
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.login-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 15px;
+}
+
+.login-logo span {
+    font-size: 35px;
+}
+
+.login-logo h1 {
+    font-size: 28px;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.login-container input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #444;
+    border-radius: 5px;
+
+    background: #242424;
+    color: #fff;
+
+    outline: none;
+}
+
+.login-container input:focus {
+    border-color: #1db954;
+}
+
+.login-container button {
+    padding: 14px;
+
+    border-radius: 25px;
+
+    background: #1db954;
+    color: #000;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.login-container button:hover {
+    transform: scale(1.02);
+}
+
+.secondary-btn {
+    background: transparent !important;
+    color: #fff !important;
+
+    border: 1px solid #555;
+}
+
+#auth-message {
+    text-align: center;
+    color: #ff5555;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+#app {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    background: #000;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 240px;
+    height: calc(100vh - 90px);
+
+    padding: 25px 15px;
+
+    background: #000;
+
+    display: flex;
+    flex-direction: column;
+
+    flex-shrink: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 23px;
+    font-weight: bold;
+
+    margin-bottom: 35px;
+
+    padding-left: 10px;
+}
+
+.logo-icon {
+    font-size: 30px;
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.nav-item {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    background: transparent;
+
+    color: #b3b3b3;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    text-align: left;
+
+    border-radius: 5px;
+
+    transition: 0.2s;
+}
+
+.nav-item:hover {
+    color: #fff;
+    background: #1a1a1a;
+}
+
+.nav-item.active {
+    color: #fff;
+    background: #242424;
+}
+
+.nav-item span {
+    font-size: 22px;
+}
+
+.admin-menu {
+    margin-top: 35px;
+}
+
+.menu-title {
+    color: #777;
+
+    font-size: 11px;
+    font-weight: bold;
+
+    padding: 0 15px;
+
+    margin-bottom: 10px;
+}
+
+.sidebar-space {
+    flex: 1;
+}
+
+.sidebar-bottom {
+    border-top: 1px solid #282828;
+
+    padding-top: 15px;
+}
+
+.logout-btn {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    background: transparent;
+
+    color: #b3b3b3;
+
+    text-align: left;
+
+    font-weight: bold;
+
+    border-radius: 5px;
+}
+
+.logout-btn:hover {
+    color: #fff;
+    background: #1a1a1a;
+}
+
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL
+========================================================= */
+
+.main-content {
+    height: calc(100vh - 90px);
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    background: linear-gradient(
+        #202020,
+        #121212 400px
+    );
+}
+
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.topbar {
+    height: 70px;
+
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 10;
+
+    background: rgba(18, 18, 18, 0.95);
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.circle-btn {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #0a0a0a;
+
+    color: #fff;
+
+    font-size: 22px;
+}
+
+.circle-btn:hover {
+    background: #222;
+}
+
+.search-box {
+    width: 400px;
+
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 15px;
+
+    background: #fff;
+
+    border-radius: 25px;
+
+    color: #000;
+}
+
+.search-box input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+
+    font-size: 14px;
+}
+
+.top-user {
+    margin-left: auto;
+}
+
+.user-avatar {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #333;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    margin: 25px 30px;
+
+    min-height: 230px;
+
+    padding: 35px;
+
+    border-radius: 10px;
+
+    display: flex;
+    align-items: end;
+
+    background: linear-gradient(
+        135deg,
+        #333,
+        #151515
+    );
+}
+
+.small-title {
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    color: #b3b3b3;
+
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    margin-bottom: 12px;
+}
+
+.hero p {
+    color: #b3b3b3;
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+.music-section {
+    padding: 0 30px 40px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 24px;
+}
+
+.section-header button {
+    background: transparent;
+
+    color: #b3b3b3;
+
+    font-weight: bold;
+}
+
+.section-header button:hover {
+    color: #fff;
+}
+
+
+/* =========================================================
+   CARDS DE MÚSICA
+========================================================= */
+
+.music-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(180px, 1fr));
+
+    gap: 20px;
+}
+
+.music-card {
+    padding: 15px;
+
+    background: #181818;
+
+    border-radius: 8px;
+
+    transition: 0.25s;
+
+    position: relative;
+}
+
+.music-card:hover {
+    background: #282828;
+
+    transform: translateY(-3px);
+}
+
+.music-card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    margin-bottom: 12px;
+
+    background: #333;
+}
+
+.music-card h3 {
+    font-size: 16px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    margin-bottom: 6px;
+}
+
+.music-card p {
+    color: #a7a7a7;
+
+    font-size: 14px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    margin-bottom: 15px;
+}
+
+.play-music {
+    width: 100%;
+
+    padding: 9px;
+
+    border-radius: 20px;
+
+    background: #1db954;
+
+    color: #000;
+
+    font-weight: bold;
+}
+
+.play-music:hover {
+    background: #1ed760;
+}
+
+
+/* =========================================================
+   PÁGINAS
+========================================================= */
+
+.page-section {
+    padding-bottom: 40px;
+}
+
+.page-title {
+    padding: 40px 30px 25px;
+}
+
+.page-title h1 {
+    font-size: 36px;
+
+    margin-bottom: 10px;
+}
+
+.page-title p {
+    color: #b3b3b3;
+}
+
+
+/* =========================================================
+   BUSCA
+========================================================= */
+
+.search-results {
+    padding: 0 30px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.search-results > div {
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    background: #181818;
+
+    border-radius: 5px;
+}
+
+.search-results h3 {
+    flex: 1;
+}
+
+.search-results p {
+    width: 200px;
+
+    color: #aaa;
+}
+
+.search-results button {
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    background: #1db954;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   BIBLIOTECA
+========================================================= */
+
+.library-empty {
+    margin: 30px;
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    background: #181818;
+
+    border-radius: 10px;
+}
+
+.empty-icon {
+    font-size: 60px;
+
+    margin-bottom: 20px;
+}
+
+.library-empty h2 {
+    margin-bottom: 10px;
+}
+
+.library-empty p {
+    color: #aaa;
+}
+
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+.admin-card {
+    margin: 0 30px 40px;
+
+    padding: 30px;
+
+    background: #181818;
+
+    border-radius: 10px;
+}
+
+.admin-card h2 {
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.form-group label,
+.file-group label {
+    color: #ccc;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 12px;
+
+    border: 1px solid #444;
+
+    border-radius: 5px;
+
+    background: #242424;
+
+    color: #fff;
+
+    outline: none;
+}
+
+.form-group input:focus {
+    border-color: #1db954;
+}
+
+.file-group {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.file-group input {
+    padding: 12px;
+
+    border-radius: 5px;
+
+    background: #242424;
+
+    color: #aaa;
+
+    border: 1px solid #444;
+}
+
+.add-music-btn {
+    margin-top: 25px;
+
+    padding: 12px 25px;
+
+    border-radius: 25px;
+
+    background: #1db954;
+
+    color: #000;
+
+    font-weight: bold;
+}
+
+.add-music-btn:hover {
+    background: #1ed760;
+
+    transform: scale(1.02);
+}
+
+#admin-message {
+    margin-top: 15px;
+
+    color: #1db954;
+}
+
+.admin-music-area {
+    padding: 0 30px;
+}
+
+.admin-music-area h2 {
+    margin-bottom: 20px;
+}
+
+.admin-music-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.admin-music-list > div {
+    padding: 15px;
+
+    background: #181818;
+
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.admin-music-list strong {
+    margin-right: 5px;
+}
+
+.admin-music-list span {
+    color: #aaa;
+}
+
+.delete-music {
+    margin-left: auto;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    background: #d32f2f;
+
+    color: #fff;
+}
+
+.delete-music:hover {
+    background: #ef4444;
+}
+
+
+/* =========================================================
+   PLAYER
+========================================================= */
+
+.player {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 90px;
+
+    padding: 10px 20px;
+
+    background: #181818;
+
+    border-top: 1px solid #282828;
+
+    display: flex;
+    align-items: center;
+
+    z-index: 100;
+}
+
+
+/* INFORMAÇÕES */
+
+.player-info {
+    width: 30%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.player-cover {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #333;
+
+    border-radius: 4px;
+}
+
+.player-info h4 {
+    margin-bottom: 5px;
+}
+
+.player-info p {
+    color: #aaa;
+
+    font-size: 13px;
+}
+
+
+/* CONTROLES */
+
+.player-center {
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.player-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.player-buttons button {
+    background: transparent;
+
+    color: #aaa;
+
+    font-size: 16px;
+}
+
+.player-buttons button:hover {
+    color: #fff;
+}
+
+.player-buttons .play-button {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #000;
+
+    font-size: 14px;
+}
+
+.player-center audio {
+    width: 100%;
+
+    height: 28px;
+}
+
+
+/* VOLUME */
+
+.player-volume {
+    width: 30%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.player-volume input {
+    width: 100px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #444;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 80px;
+
+        padding: 20px 10px;
+    }
+
+    .logo span:last-child,
+    .nav-item:not(.nav-item span),
+    .menu-title,
+    .logout-btn {
+        font-size: 0;
+    }
+
+    .nav-item {
+        justify-content: center;
+    }
+
+    .nav-item span {
+        font-size: 22px;
+    }
+
+    .logo {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .logo-icon {
+        font-size: 30px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box {
+        width: 300px;
+    }
+
+    .player-info {
+        width: 25%;
+    }
+
+    .player-center {
+        width: 50%;
+    }
+
+    .player-volume {
+        width: 25%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .navigation-buttons {
+        display: none;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .hero {
+        margin: 15px;
+
+        min-height: 200px;
+
+        padding: 25px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .music-section {
+        padding: 0 15px 30px;
+    }
+
+    .music-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .page-title {
+        padding: 25px 15px;
+    }
+
+    .admin-card {
+        margin: 0 15px 30px;
+
+        padding: 20px;
+    }
+
+    .admin-music-area {
+        padding: 0 15px;
+    }
+
+    .player {
+        height: 75px;
+
+        padding: 8px;
+    }
+
+    .player-info {
+        width: 35%;
+    }
+
+    .player-info h4 {
+        font-size: 12px;
+    }
+
+    .player-info p {
+        font-size: 11px;
+    }
+
+    .player-center {
+        width: 65%;
+    }
+
+    .player-volume {
+        display: none;
+    }
+
+    .player-buttons {
+        display: none;
+    }
+
+    .player-center audio {
+        width: 100%;
+    }
+
+}
