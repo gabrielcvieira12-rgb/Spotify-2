@@ -129,7 +129,16 @@ button {
     color: #ff5555;
 }
 
+#login-ou {
+    text-align: center;
+}
 
+.login-sub-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
 /* =========================================================
    APP
 ========================================================= */
